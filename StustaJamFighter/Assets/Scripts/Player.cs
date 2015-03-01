@@ -46,11 +46,12 @@ public class Player : MonoBehaviour {
 			Debug.Log(OtherPlayer.name);
 			Quaternion old = transform.rotation;
 			
-			//Links vom Gegner
+			// Links vom Gegner
 			if(this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
 			{
 				transform.rotation = new Quaternion(old.x,0,old.z,old.w);
 	        }
+            // Rechts vom Gegner
 			if(this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
 			{
 				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
