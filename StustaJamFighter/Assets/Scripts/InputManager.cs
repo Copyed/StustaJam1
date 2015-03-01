@@ -96,26 +96,31 @@ public class InputManager : MonoBehaviour {
 				if(Input.GetButtonDown("2A"))
 				{
 					Debug.Log ("2A");
+					Player2Controls.Kick();
 				}
 				
 				if(Input.GetButtonDown("2B"))
 				{
 					Debug.Log ("2B");
+					Player2Controls.HeavyKick();
 				}
 				
 				if(Input.GetButtonDown("2X"))
 				{
 					Debug.Log ("2X");
+					Player2Controls.Punch();
 				}
 				
 				if(Input.GetButtonDown("2Y"))
 				{
 					Debug.Log ("2Y");
+					Player2Controls.HeavyPunch();
 				}
 				
 				if(Input.GetButtonDown("2RightBack"))
 				{
 					Debug.Log ("2RightBack");
+					Player2Controls.HighPunch();
 				}
 				
 				if(Input.GetButtonDown("2LeftBack"))
@@ -183,7 +188,7 @@ public class InputManager : MonoBehaviour {
 				}
 				if(Input.GetAxis("LeftJoystickY")>0)
 				{
-					if((Mathf.Abs (Input.GetAxis("LeftJoystickX"))) < JumpTolerance*2)
+					if((Mathf.Abs (Input.GetAxis("LeftJoystickX"))) < JumpTolerance)
 					{
 						Player1Controls.Duck();
 					}
@@ -200,11 +205,21 @@ public class InputManager : MonoBehaviour {
 				Player2Controls.MovePlayer(Input.GetAxis("2LeftJoystickX"));
 			}
 			
-			if(CheckforError(Input.GetAxis ("2LeftJoystickY")) != 0)
+			if(CheckforError(Input.GetAxis ("LeftJoystickY")) != 0)
 			{
-				if((Mathf.Abs (Input.GetAxis("2LeftJoystickX"))) < JumpTolerance)
+				if(Input.GetAxis("2LeftJoystickY")<0)
 				{
-					Player2Controls.Jump();
+					if((Mathf.Abs (Input.GetAxis("2LeftJoystickX"))) < JumpTolerance)
+					{
+						Player2Controls.Jump();
+					}
+				}
+				if(Input.GetAxis("2LeftJoystickY")>0)
+				{
+					if((Mathf.Abs (Input.GetAxis("2LeftJoystickX"))) < JumpTolerance)
+					{
+						Player2Controls.Duck();
+					}
 				}
 			}
 			
