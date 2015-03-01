@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1Controls: {fileID: 1062611515}
-  Player2Controls: {fileID: 0}
+  Player2Controls: {fileID: 178353243}
   ErrorTolerance: .200000003
   JumpTolerance: .200000003
 --- !u!1 &2137617200
