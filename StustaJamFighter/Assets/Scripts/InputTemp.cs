@@ -37,7 +37,7 @@ public class InputTemp : MonoBehaviour {
         }
 	}
 
-    void OnCollisionStay(Collider other)
+    void OnCollisionStay(Collision other)
     {
         inAir = false;
     }

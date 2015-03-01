@@ -9,9 +9,11 @@ public class Player : MonoBehaviour {
     
     public float PlayerSpeed = 10.0f;
 
+	private Animator animator;
+
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour {
 	
 	public void MovePlayer(float StickMove)
 	{
+		animator.SetFloat ("movSpeed", StickMove);
 		Vector3 old = transform.position;
 		transform.position = new Vector3(old.x + PlayerSpeed * StickMove * Time.deltaTime,old.y,old.z);
 	}
