@@ -169,6 +169,18 @@ public class InputManager : MonoBehaviour {
 	
 	public void CheckAxis()
 	{
+		if(NumControllers == 0)
+		{
+			if(Input.GetKey("a"))
+			{
+				Player1Controls.MovePlayer(-1);
+			}
+			if(Input.GetKey ("d"))
+			{
+				Player1Controls.MovePlayer(1);
+			}
+		}
+	
 		if(NumControllers > 0)
 		{
 									
