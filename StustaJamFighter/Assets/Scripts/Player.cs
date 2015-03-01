@@ -3,9 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public int hitpoints;
-	public float speed;
-
+    public float health = 100.0f;
 
 	// Use this for initialization
 	void Start () {
