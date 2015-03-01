@@ -355,7 +355,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863494068}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -514,6 +514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  PlayerNumber: 0
+  PlayerSpeed: 10
 --- !u!23 &1009221632
 Renderer:
   m_ObjectHideFlags: 0
@@ -613,6 +615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  PlayerNumber: 0
+  PlayerSpeed: 10
 --- !u!23 &1475206705
 Renderer:
   m_ObjectHideFlags: 0
