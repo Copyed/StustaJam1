@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 		if (instance == null) {
             instance = this;
             players = GameObject.FindObjectsOfType<Player>();
+            Debug.Log("Found "+players.Length+" players.");
         }
         else {
             Destroy(gameObject);
