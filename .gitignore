@@ -215,3 +215,7 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 StustaJamFighter/Temp/
+StustaJamFighter/Assembly-CSharp-vs.csproj
+StustaJamFighter/Assembly-CSharp.csproj
+StustaJamFighter/StustaJamFighter-csharp.sln
+StustaJamFighter/StustaJamFighter.sln
