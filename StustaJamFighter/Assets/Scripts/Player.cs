@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public float PlayerSpeed = 10.0f;
 
 	private Animator animator;
-    public GameObject OtherPlayer;
+    public Player Enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -23,24 +23,35 @@ public class Player : MonoBehaviour {
 			GameManager.instance.player2 = gameObject;
 		}
 		animator = GetComponent<Animator> ();
+<<<<<<< HEAD
 		OtherPlayer = eins ? GameManager.instance.player2 : GameManager.instance.player1;
+=======
+>>>>>>> ee29ccfe098ff60e4b080e0bb6751d593ee0befc
 		
+        //Findet den Gegner um ihn immer anzuvisieren
+		foreach(Player player in GameManager.instance.players)
+		{
+            if (player != this.gameObject)
+			{
+                Enemy = player;
+            }
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		if(OtherPlayer != null)
+		if(Enemy != null)
 		{
 			Debug.Log(OtherPlayer.name);
 			Quaternion old = transform.rotation;
 			
 			//Links vom Gegner
-			if(this.transform.position.x < OtherPlayer.transform.position.x && this.transform.rotation.y != 0)
+			if(this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
 			{
 				transform.rotation = new Quaternion(old.x,0,old.z,old.w);
-	}
-			if(this.transform.position.x > OtherPlayer.transform.position.x && this.transform.rotation.y != 180)
+	        }
+			if(this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
 			{
 				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
 			}
@@ -100,19 +111,4 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log ("HEAVY KICK");
 	}
-	
-	//Findet den Gegner um ihn immer anzuvisieren
-	public GameObject FindEnemy()
-	{
-		GameObject[] Objs = GameObject.FindGameObjectsWithTag("Player");
-		foreach(GameObject G in Objs)
-		{
-			if(G != this.gameObject)
-			{
-				return G;
-}
-		}
-		
-		return null;
-	}	
 }
