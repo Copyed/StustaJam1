@@ -275,6 +275,8 @@ GameObject:
   - 223: {fileID: 358545694}
   - 114: {fileID: 358545693}
   - 114: {fileID: 358545692}
+  - 222: {fileID: 358545697}
+  - 114: {fileID: 358545696}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -355,6 +357,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &358545696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358545691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 97526385c65eaa84a9a024a9cfe621ef, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &358545697
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358545691}
 --- !u!1 &688594897
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +862,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11422492, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
+      propertyPath: players.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 410404, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -877,6 +910,14 @@ Prefab:
       propertyPath: player2
       value: 
       objectReference: {fileID: 180204574}
+    - target: {fileID: 11422492, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
+      propertyPath: players.Array.data[0]
+      value: 
+      objectReference: {fileID: 1062611515}
+    - target: {fileID: 11422492, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
+      propertyPath: players.Array.data[1]
+      value: 
+      objectReference: {fileID: 180204580}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
   m_RootGameObject: {fileID: 1710769586}
@@ -914,7 +955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1062611510}
   player2: {fileID: 180204574}
-  players: []
+  players:
+  - {fileID: 1062611515}
+  - {fileID: 180204580}
 --- !u!4 &1710769588
 Transform:
   m_ObjectHideFlags: 0

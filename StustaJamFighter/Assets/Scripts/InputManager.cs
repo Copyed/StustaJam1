@@ -169,6 +169,7 @@ public class InputManager : MonoBehaviour {
 	
 	public void CheckAxis()
 	{
+
 		if(NumControllers == 0)
 		{
 			if(Input.GetKey("a"))

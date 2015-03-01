@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
 		if (instance == null) {
             instance = this;
-            players = GameObject.FindObjectsOfType<Player>();
+            //players = GameObject.FindObjectsOfType<Player>();
             Debug.Log("Found "+players.Length+" players.");
         }
         else {

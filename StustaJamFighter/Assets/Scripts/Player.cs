@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public float PlayerSpeed = 10.0f;
 
 	private Animator animator;
-	[HideInInspector]public Player Enemy;
+	public Player Enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
         //Findet den Gegner um ihn immer anzuvisieren
 		foreach(Player player in GameManager.instance.players)
 		{
-            if (player != this.gameObject)
+            if (player != this)
 			{
                 Enemy = player;
             }
