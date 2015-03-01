@@ -323,7 +323,7 @@ GameObject:
   - 23: {fileID: 863494069}
   m_Layer: 0
   m_Name: Fist
-  m_TagString: Untagged
+  m_TagString: Fist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,10 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c3cb0f5f02af248933bcf7548ba0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  healthBarLeft: {fileID: 0}
-  healthBarRight: {fileID: 0}
+  playerLeft: {fileID: 1009221631}
+  playerRight: {fileID: 1475206704}
+  healthBarLeft: {fileID: 366791111}
+  healthBarRight: {fileID: 1909492993}
   healthBarScaling: .100000001
 --- !u!1 &1009221630
 GameObject:

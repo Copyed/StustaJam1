@@ -18,6 +18,16 @@ public class Player : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collided with "+other.gameObject.name+" "+other.gameObject.tag);
+        if(other.gameObject.tag == "Fist")
+        {
+            Debug.Log("You got fisted");
+            health -= 10.0f;
+        }
+    }
 	
 	public void MovePlayer(float StickMove)
 	{
