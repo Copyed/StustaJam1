@@ -1,19 +1,23 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{E3A2C665-37D4-BAB9-D1ED-C99058B5C318}") = "StustaJamFighter", "Assembly-CSharp.csproj", "{C79486F8-7B75-A81B-AABF-BDC8C57FFD97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{C79486F8-7B75-A81B-AABF-BDC8C57FFD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79486F8-7B75-A81B-AABF-BDC8C57FFD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79486F8-7B75-A81B-AABF-BDC8C57FFD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79486F8-7B75-A81B-AABF-BDC8C57FFD97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -32,4 +36,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal
