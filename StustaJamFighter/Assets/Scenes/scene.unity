@@ -112,7 +112,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 21221360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Sprite
@@ -436,6 +436,7 @@ GameObject:
   - 50: {fileID: 1062611513}
   - 60: {fileID: 1062611512}
   - 58: {fileID: 1062611511}
+  - 95: {fileID: 1062611517}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -550,6 +551,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!95 &1062611517
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062611510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77e84296bce10d04498ced8ad63015fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1367662552
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cd36b448e2ec845af8f3fc29af3a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player1Controls: {fileID: 0}
+  Player2Controls: {fileID: 0}
 --- !u!1 &2137617200
 GameObject:
   m_ObjectHideFlags: 0
