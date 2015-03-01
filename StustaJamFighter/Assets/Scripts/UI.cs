@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
-    public GameObject healthBarLeft;
-    public GameObject healthBarRight;
+    public Image healthBarLeft;
+    public Image healthBarRight;
 
     public float healthBarScaling = 0.1f;
 
@@ -14,7 +15,7 @@ public class UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        healthBarLeft.transform.localScale = new Vector3(GameManager.instance.players[0].health * healthBarScaling, 1.0f, 1.0f);
-        healthBarRight.transform.localScale = new Vector3(GameManager.instance.players[1].health * healthBarScaling, 1.0f, 1.0f);
+        //healthBarLeft = GameManager.instance.players[0].health * healthBarScaling;
+        //healthBarRight.flexibleWidth = GameManager.instance.players[1].health * healthBarScaling;
 	}
 }

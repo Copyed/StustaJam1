@@ -13,11 +13,11 @@ public class cameraMovement : MonoBehaviour {
 	private Vector3 lB;
 	private Vector3 rB;
 
-	private GameObject[] players;
+	private Player[] players;
 
 	// Use this for initialization
 	void Start () {
-		players = GameObject.FindGameObjectsWithTag ("Player");
+		players = GameManager.instance.players;
 		lB = leftBorder.position + new Vector3 (2f*camera.orthographicSize, 0f, transform.position.z);
 		rB = rightBorder.position + new Vector3 (-2f*camera.orthographicSize, 0f, transform.position.z);
 	
@@ -38,7 +38,7 @@ public class cameraMovement : MonoBehaviour {
 		//Determine center of players
 		float xAverage = 0f;
 		foreach (var item in players) {
-			xAverage += item.transform.position.x;
+			xAverage += item.gameObject.transform.position.x;
 		}
 		xAverage /= (float)players.Length;
 
