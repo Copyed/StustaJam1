@@ -166,7 +166,7 @@ public class InputManager : MonoBehaviour {
 	{
 		if(NumControllers > 0)
 		{
-			
+									
 			if(CheckforError(Input.GetAxis("LeftJoystickX")) != 0)
 			{
 				Player1Controls.MovePlayer(Input.GetAxis("LeftJoystickX"));
@@ -174,9 +174,19 @@ public class InputManager : MonoBehaviour {
 			
 			if(CheckforError(Input.GetAxis ("LeftJoystickY")) != 0)
 			{
-				if((Mathf.Abs (Input.GetAxis("LeftJoystickX"))) < JumpTolerance)
+				if(Input.GetAxis("LeftJoystickY")<0)
 				{
-					Player1Controls.Jump();
+					if((Mathf.Abs (Input.GetAxis("LeftJoystickX"))) < JumpTolerance)
+					{
+						Player1Controls.Jump();
+					}
+				}
+				if(Input.GetAxis("LeftJoystickY")>0)
+				{
+					if((Mathf.Abs (Input.GetAxis("LeftJoystickX"))) < JumpTolerance*2)
+					{
+						Player1Controls.Duck();
+					}
 				}
 			}
 			

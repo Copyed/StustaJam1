@@ -31,6 +31,11 @@ public class Player : MonoBehaviour {
 		Debug.Log ("JUMP "+Time.time);
 	}
 	
+	public void Duck()
+	{
+		Debug.Log ("DUCK "+Time.time);
+	}
+	
 	public void Punch()
 	{
 		Debug.Log ("PUNCH");
