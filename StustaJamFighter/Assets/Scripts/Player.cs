@@ -78,7 +78,7 @@ public class Player : MonoBehaviour {
 	
 	public void Punch()
 	{
-		Debug.Log ("PUNCH");
+		animator.SetTrigger ("punch");
 	}
 	
 	public void HeavyPunch()

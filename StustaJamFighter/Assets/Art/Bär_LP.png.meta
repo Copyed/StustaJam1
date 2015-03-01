@@ -3,6 +3,8 @@ guid: 80b11baa05074b74f83c6c6318b3bfc4
 TextureImporter:
   fileIDToRecycleName:
     21300000: "B\xE4r_LP_0"
+    21300002: "B\xE4r_LP_1"
+    21300004: "B\xE4r_LP_2"
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,6 +53,26 @@ TextureImporter:
         y: 231
         width: 409
         height: 563
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "B\xE4r_LP_1"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 235
+        width: 335
+        height: 557
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "B\xE4r_LP_2"
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 233
+        width: 371
+        height: 561
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
