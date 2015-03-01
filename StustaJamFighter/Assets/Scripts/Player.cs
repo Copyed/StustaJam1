@@ -10,24 +10,12 @@ public class Player : MonoBehaviour {
     public float PlayerSpeed = 10.0f;
 
 	private Animator animator;
-    public Player Enemy;
+	[HideInInspector]public Player Enemy;
 
 	// Use this for initialization
 	void Start () {
-		bool eins;
-		if (GameManager.instance.player1 == null) {
-			GameManager.instance.player1 = gameObject;
-			eins = true;
-		} else {
-			eins = false;
-			GameManager.instance.player2 = gameObject;
-		}
+
 		animator = GetComponent<Animator> ();
-<<<<<<< HEAD
-		OtherPlayer = eins ? GameManager.instance.player2 : GameManager.instance.player1;
-=======
->>>>>>> ee29ccfe098ff60e4b080e0bb6751d593ee0befc
-		
         //Findet den Gegner um ihn immer anzuvisieren
 		foreach(Player player in GameManager.instance.players)
 		{
@@ -43,7 +31,6 @@ public class Player : MonoBehaviour {
 	
 		if(Enemy != null)
 		{
-			Debug.Log(OtherPlayer.name);
 			Quaternion old = transform.rotation;
 			
 			//Links vom Gegner
