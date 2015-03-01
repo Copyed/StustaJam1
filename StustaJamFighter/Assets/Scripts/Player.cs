@@ -14,8 +14,16 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		bool eins;
+		if (GameManager.instance.player1 == null) {
+			GameManager.instance.player1 = gameObject;
+			eins = true;
+		} else {
+			eins = false;
+			GameManager.instance.player2 = gameObject;
+		}
 		animator = GetComponent<Animator> ();
-		OtherPlayer = FindEnemy();
+		OtherPlayer = eins ? GameManager.instance.player2 : GameManager.instance.player1;
 		
 	}
 	
@@ -24,6 +32,7 @@ public class Player : MonoBehaviour {
 	
 		if(OtherPlayer != null)
 		{
+			Debug.Log(OtherPlayer.name);
 			Quaternion old = transform.rotation;
 			
 			//Links vom Gegner

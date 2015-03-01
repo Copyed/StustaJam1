@@ -285,6 +285,7 @@ MonoBehaviour:
   health: 100
   PlayerNumber: 0
   PlayerSpeed: 10
+  OtherPlayer: {fileID: 0}
 --- !u!4 &178353244
 Transform:
   m_ObjectHideFlags: 0
@@ -523,6 +524,7 @@ MonoBehaviour:
   health: 100
   PlayerNumber: 1
   PlayerSpeed: 10
+  OtherPlayer: {fileID: 0}
 --- !u!4 &1062611516
 Transform:
   m_ObjectHideFlags: 0
