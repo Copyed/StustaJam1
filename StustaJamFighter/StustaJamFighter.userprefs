@@ -10,8 +10,12 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InputManager.cs">
     <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Scripts\InputManager.cs" Line="82" Column="27" />
+=======
       <File FileName="Assets\Scripts\InputManager.cs" Line="61" Column="21" />
 >>>>>>> 9e3ff054017c791ec42a6d1dde945e3bf84a78d7
+>>>>>>> 450e49cde8904bc55ee09b4178983b78b11011a6
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

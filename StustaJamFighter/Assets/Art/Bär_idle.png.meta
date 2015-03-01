@@ -48,55 +48,55 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: baer_idle1
+    - name: 
       rect:
         serializedVersion: 2
         x: 25
         y: 250
         width: 330
         height: 550
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: baer_idle2
+    - name: 
       rect:
         serializedVersion: 2
         x: 359
         y: 250
         width: 330
         height: 550
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: baer_idle3
+    - name: 
       rect:
         serializedVersion: 2
         x: 704
         y: 247
         width: 330
         height: 556
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: baer_idle4
+    - name: 
       rect:
         serializedVersion: 2
         x: 1052
         y: 249
         width: 327
         height: 553
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: baer_idle5
+    - name: 
       rect:
         serializedVersion: 2
         x: 1391
         y: 249
         width: 337
         height: 553
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
