@@ -3,15 +3,22 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	//Singleton routine
+	//Singleton instance
 	public static GameManager instance;
+
+    public Player[] players;
 
 	// Use this for initialization
 	void Awake () {
-		if (instance == null)
-			instance = this;
-		else
-			Destroy (gameObject);
+		if (instance == null) {
+            instance = this;
+            players = GameObject.FindObjectsOfType<Player>();
+        }
+        else {
+            Destroy(gameObject);
+        }
+			
+
 		DontDestroyOnLoad (gameObject);
 	}
 	
