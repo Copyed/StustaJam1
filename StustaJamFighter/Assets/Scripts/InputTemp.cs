@@ -13,6 +13,8 @@ public class InputTemp : MonoBehaviour {
     public Vector3 fistStartPosition;
     public Vector3 fistPunchPosition;
 
+    private bool inAir;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,7 +22,11 @@ public class InputTemp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        player.transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * jump, 0.0f) * (Time.deltaTime * speed));
+        player.transform.Translate(new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * (Time.deltaTime * speed));
+        
+
+        if(Input.GetAxis("Vertical") > 0 && !inAir) player.rigidbody.AddForce(Vector3.up  * jump);
+
         if(Input.GetKeyDown(KeyCode.X))
         {
             fist.transform.localPosition = fistPunchPosition;
@@ -30,4 +36,9 @@ public class InputTemp : MonoBehaviour {
             fist.transform.localPosition = fistStartPosition;
         }
 	}
+
+    void OnCollisionStay(Collider other)
+    {
+        inAir = false;
+    }
 }
