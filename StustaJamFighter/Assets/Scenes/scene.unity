@@ -279,6 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  PlayerNumber: 0
+  PlayerSpeed: 10
+  OtherPlayer: {fileID: 0}
 --- !u!4 &178353244
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +518,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  PlayerNumber: 0
+  PlayerSpeed: 10
+  OtherPlayer: {fileID: 0}
 --- !u!4 &1062611516
 Transform:
   m_ObjectHideFlags: 0
@@ -704,8 +710,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cd36b448e2ec845af8f3fc29af3a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Controls: {fileID: 0}
+  Player1Controls: {fileID: 1062611515}
   Player2Controls: {fileID: 0}
+  ErrorTolerance: .200000003
+  JumpTolerance: .200000003
 --- !u!1 &2137617200
 GameObject:
   m_ObjectHideFlags: 0

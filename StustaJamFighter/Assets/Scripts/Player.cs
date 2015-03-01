@@ -8,14 +8,33 @@ public class Player : MonoBehaviour {
     public int PlayerNumber;
     
     public float PlayerSpeed = 10.0f;
+    
+    public GameObject OtherPlayer;
 
 	// Use this for initialization
 	void Start () {
+	
+		OtherPlayer = FindEnemy();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
+		if(OtherPlayer != null)
+		{
+			Quaternion old = transform.rotation;
+			
+			//Links vom Gegner
+			if(this.transform.position.x < OtherPlayer.transform.position.x && this.transform.rotation.y != 0)
+			{
+				transform.rotation = new Quaternion(old.x,0,old.z,old.w);
+			}
+			if(this.transform.position.x > OtherPlayer.transform.position.x && this.transform.rotation.y != 180)
+			{
+				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
+			}
+		}
 	
 	}
 
@@ -70,4 +89,19 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log ("HEAVY KICK");
 	}
+	
+	//Findet den Gegner um ihn immer anzuvisieren
+	public GameObject FindEnemy()
+	{
+		GameObject[] Objs = GameObject.FindGameObjectsWithTag("Player");
+		foreach(GameObject G in Objs)
+		{
+			if(G != this.gameObject)
+			{
+				return G;
+			}
+		}
+		
+		return null;
+	}	
 }
