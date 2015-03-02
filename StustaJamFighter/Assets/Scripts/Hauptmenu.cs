@@ -54,11 +54,20 @@ public class Hauptmenu : MonoBehaviour {
 	
 		Debug.Log (VorhangOffen);
 	
-		if(VorhangOffen == false && Input.GetKeyDown("u"))
-		{
-			VorhangOffen = true;
-			animator.SetBool("VorhangOffen",true);
-		}
+        if(Input.GetKeyDown("u"))
+        {
+            	if(VorhangOffen == false)
+	            {
+		            VorhangOffen = true;
+		            animator.SetBool("VorhangOffen",true);
+                }
+                else
+                {
+                    LoadLevel1();
+                }
+
+        }
+	
 	
 	
 
