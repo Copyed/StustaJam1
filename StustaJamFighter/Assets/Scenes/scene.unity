@@ -346,6 +346,7 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!4 &180204581
 Transform:
@@ -766,6 +767,7 @@ MonoBehaviour:
   rightBorder: {fileID: 688594898}
   inverseCameraSize: 2.29999995
   minSize: 4.13999987
+  maxSize: 15
   hoehenfaktor: 1
   heightoffset: -5
 --- !u!1 &1062611510
@@ -856,6 +858,7 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!4 &1062611516
 Transform:
@@ -927,7 +930,7 @@ GameObject:
   - 61: {fileID: 1367662553}
   m_Layer: 0
   m_Name: boden
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

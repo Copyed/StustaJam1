@@ -105,7 +105,7 @@ public class Player : MonoBehaviour {
 	
 	public void HeavyPunch()
 	{
-		animator.SetTrigger("highpunch");
+		animator.SetTrigger("highPunch");
 		SetLayer();
 	}
 	
