@@ -4,10 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
     public float health = 100.0f;
-    
-    public int PlayerNumber;
-    
-    public float PlayerSpeed = 10.0f;
+    public float speed = 10.0f;
 
 	private Animator animator;
 	public Player Enemy;
@@ -47,21 +44,21 @@ public class Player : MonoBehaviour {
 
 	}
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Collided with "+other.gameObject.name+" "+other.gameObject.tag);
-        if(other.gameObject.tag == "Fist")
-        {
-            Debug.Log("You got fisted");
-            health -= 10.0f;
-        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collided with " + other.gameObject.name + " " + other.gameObject.tag);
     }
 	
 	public void MovePlayer(float StickMove)
 	{
 		animator.SetFloat ("movSpeed", StickMove);
 		Vector3 old = transform.position;
-		transform.position = new Vector3(old.x + PlayerSpeed * StickMove * Time.deltaTime,old.y,old.z);
+		transform.position = new Vector3(old.x + speed * StickMove * Time.deltaTime,old.y,old.z);
 	}
 	
 	public void Jump()
