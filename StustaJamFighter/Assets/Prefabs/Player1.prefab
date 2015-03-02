@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 406998}
   - 212: {fileID: 21206998}
   - 58: {fileID: 5806998}
+  - 114: {fileID: 11468764}
   - 114: {fileID: 11406998}
   m_Layer: 0
   m_Name: Faust
@@ -28,6 +29,7 @@ GameObject:
   - 4: {fileID: 407000}
   - 212: {fileID: 21207000}
   - 58: {fileID: 5807000}
+  - 114: {fileID: 11468762}
   - 114: {fileID: 11443278}
   m_Layer: 0
   m_Name: Beine
@@ -87,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.50999999, z: 0}
+  m_LocalPosition: {x: 0, y: -1.17999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406998}
@@ -159,7 +161,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11406998
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106998}
@@ -184,8 +186,20 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!114 &11443278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11468762
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -194,6 +208,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11468764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea7f1ba7d4453b4694527b62286d8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21206998

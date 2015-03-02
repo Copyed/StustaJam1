@@ -65,7 +65,6 @@ public class Hauptmenu : MonoBehaviour {
                 {
                     LoadLevel1();
                 }
-
         }
 	
 	
