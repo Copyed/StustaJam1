@@ -80,6 +80,7 @@ public class Player : MonoBehaviour {
 	
 	public void HeavyPunch()
 	{
+		animator.SetTrigger("highpunch");
 		Debug.Log ("HEAVY PUNCH");
 	}
 	
