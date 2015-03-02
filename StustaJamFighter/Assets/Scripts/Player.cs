@@ -9,6 +9,8 @@ public class Player : MonoBehaviour {
 
 	private Animator animator;
 	public Player Enemy;
+	
+	public bool Ducking = false;
 
 
 	// Use this for initialization
@@ -81,6 +83,7 @@ public class Player : MonoBehaviour {
 	public void Duck()
 	{
 		Debug.Log ("DUCK "+Time.time);
+		Ducking = true;
 	}
 	
 	public void Punch()
@@ -116,6 +119,12 @@ public class Player : MonoBehaviour {
 	public void Block()
 	{
 		Debug.Log ("BLOCK");
+	}
+	
+	//Linker Joystick im Ruhezustand
+	public void LeftAxisReleased()
+	{
+		Ducking = false;
 	}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
