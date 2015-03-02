@@ -191,6 +191,7 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 1062611515}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!4 &22353903
 Transform:
@@ -668,7 +669,9 @@ MonoBehaviour:
   rightBorder: {fileID: 688594898}
   inverseCameraSize: 2.29999995
   minSize: 4.13999987
+  maxSize: 15
   hoehenfaktor: 2
+  heightoffset: -1
 --- !u!1 &1062611510
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +762,7 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!4 &1062611516
 Transform:

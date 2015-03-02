@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 416944}
   - 212: {fileID: 21216944}
   - 58: {fileID: 5816944}
-  - 114: {fileID: 11430570}
   - 114: {fileID: 11416948}
   m_Layer: 0
   m_Name: Faust
@@ -29,9 +28,7 @@ GameObject:
   - 4: {fileID: 416946}
   - 212: {fileID: 21216946}
   - 58: {fileID: 5816946}
-  - 114: {fileID: 11430568}
   - 114: {fileID: 11416944}
-  - 114: {fileID: 11416946}
   m_Layer: 0
   m_Name: Beine
   m_TagString: Untagged
@@ -171,17 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11416946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11416948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,28 +177,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea7f1ba7d4453b4694527b62286d8c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11430568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11430570
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11497560
@@ -231,6 +195,7 @@ MonoBehaviour:
   jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  Blocking: 0
   inAir: 1
 --- !u!212 &21216944
 SpriteRenderer:
