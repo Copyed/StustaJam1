@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
-
+		//camera = Camera.main;
 		DontDestroyOnLoad (gameObject);
 	}
 	

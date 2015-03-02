@@ -35,57 +35,57 @@ public class InputManager : MonoBehaviour {
 	
 				if(Input.GetButtonDown("A"))
 				{
-					Debug.Log ("A");					
+					//Debug.Log ("A");					
 					Player1Controls.Kick ();
 				}
 				
 				if(Input.GetButtonDown("B"))
 				{
-					Debug.Log ("B");
+					//Debug.Log ("B");
 					Player1Controls.HeavyKick();
 				}
 				
 				if(Input.GetButtonDown("X"))
 				{
-					Debug.Log ("X");
+					//Debug.Log ("X");
 					Player1Controls.Punch();
 				}
 				
 				if(Input.GetButtonDown("Y"))
 				{
-					Debug.Log ("Y");
+					//Debug.Log ("Y");
 					Player1Controls.HeavyPunch();
 				}
 				
 				if(Input.GetButtonDown("RightBack"))
 				{
-					Debug.Log ("RightBack");
+					//Debug.Log ("RightBack");
 					Player1Controls.HighPunch();
 				}
 				
 				if(Input.GetButtonDown("LeftBack"))
 				{
-					Debug.Log ("LeftBack");
+					//Debug.Log ("LeftBack");
 				}
 				
 				if(Input.GetButtonDown("PressLeftJoystick"))
 				{
-					Debug.Log ("Left Joystick pressed");
+					//Debug.Log ("Left Joystick pressed");
 				}
 				
 				if(Input.GetButtonDown("PressRightJoystick"))
 				{
-					Debug.Log ("Right Joystick pressed");
+					//Debug.Log ("Right Joystick pressed");
 				}
 				
 				if(Input.GetButtonDown("Back"))
 				{
-					Debug.Log ("Back");
+					//Debug.Log ("Back");
 				}
 				
 				if(Input.GetButtonDown("Start"))
 				{
-					Debug.Log ("Start");
+					//Debug.Log ("Start");
 				}
 			
 			}
@@ -95,57 +95,57 @@ public class InputManager : MonoBehaviour {
 			
 				if(Input.GetButtonDown("2A"))
 				{
-					Debug.Log ("2A");
+					//Debug.Log ("2A");
 					Player2Controls.Kick();
 				}
 				
 				if(Input.GetButtonDown("2B"))
 				{
-					Debug.Log ("2B");
+					//Debug.Log ("2B");
 					Player2Controls.HeavyKick();
 				}
 				
 				if(Input.GetButtonDown("2X"))
 				{
-					Debug.Log ("2X");
+					//Debug.Log ("2X");
 					Player2Controls.Punch();
 				}
 				
 				if(Input.GetButtonDown("2Y"))
 				{
-					Debug.Log ("2Y");
+					//Debug.Log ("2Y");
 					Player2Controls.HeavyPunch();
 				}
 				
 				if(Input.GetButtonDown("2RightBack"))
 				{
-					Debug.Log ("2RightBack");
+					//Debug.Log ("2RightBack");
 					Player2Controls.HighPunch();
 				}
 				
 				if(Input.GetButtonDown("2LeftBack"))
 				{
-					Debug.Log ("2LeftBack");
+					//Debug.Log ("2LeftBack");
 				}
 				
 				if(Input.GetButtonDown("2PressLeftJoystick"))
 				{
-					Debug.Log ("2Left Joystick pressed");
+					//Debug.Log ("2Left Joystick pressed");
 				}
 				
 				if(Input.GetButtonDown("2PressRightJoystick"))
 				{
-					Debug.Log ("2Right Joystick pressed");
+					//Debug.Log ("2Right Joystick pressed");
 				}
 				
 				if(Input.GetButtonDown("2Back"))
 				{
-					Debug.Log ("2Back");
+					//Debug.Log ("2Back");
 				}
 				
 				if(Input.GetButtonDown("2Start"))
 				{
-					Debug.Log ("2Start");
+					//Debug.Log ("2Start");
 				}
 			}
 			
@@ -180,6 +180,10 @@ public class InputManager : MonoBehaviour {
 			{
 				Player1Controls.MovePlayer(1);
 			}
+            if(Input.GetKey("w"))
+            {
+                Player1Controls.Jump();
+            }
             if (Input.GetKeyDown("x"))
             {
                 Player1Controls.Punch();
@@ -211,6 +215,10 @@ public class InputManager : MonoBehaviour {
 					}
 				}
 			}
+			if(CheckforError(Input.GetAxis("LeftJoystickX")) == 0 && CheckforError(Input.GetAxis("LeftJoystickY")) == 0)
+			{
+				Player1Controls.LeftAxisReleased();
+			}
 			
 		}
 		
@@ -238,6 +246,11 @@ public class InputManager : MonoBehaviour {
 						Player2Controls.Duck();
 					}
 				}
+			}
+			
+			if(CheckforError(Input.GetAxis("2LeftJoystickX")) == 0 && CheckforError(Input.GetAxis("2LeftJoystickY")) == 0)
+			{
+				Player2Controls.LeftAxisReleased();
 			}
 			
 		}

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class Player : MonoBehaviour {
 
 	private Animator animator;
 	public Player Enemy;
+	
+	public bool Ducking = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,15 +20,19 @@ public class Player : MonoBehaviour {
         //Findet den Gegner um ihn immer anzuvisieren
 		foreach(Player player in GameManager.instance.players)
 		{
-            if (player != this)
+           		 if (player != this)
 			{
-                Enemy = player;
-            }
+                		Enemy = player;
+            		}
 		}
+		
+	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
 	
 		if(Enemy != null)
 		{
@@ -41,18 +49,23 @@ public class Player : MonoBehaviour {
 				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
 			}
 		}
+		
+		if(health <= 0)
+		{
+			Die();
+		}
 
 	}
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collided with "+other.gameObject.name+" "+other.gameObject.tag);
+        //Debug.Log("Collided with "+ other.gameObject.name+" "+other.gameObject.tag);
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Collided with " + other.gameObject.name + " " + other.gameObject.tag);
-    }
+	void OnTriggerEnter2D(Collider2D other)
+	{
+	}
+    
 	
 	public void MovePlayer(float StickMove)
 	{
@@ -71,39 +84,63 @@ public class Player : MonoBehaviour {
 	public void Duck()
 	{
 		Debug.Log ("DUCK "+Time.time);
+		Ducking = true;
+		animator.SetBool ("duck",Ducking);
 	}
 	
 	public void Punch()
 	{
 		animator.SetTrigger ("punch");
+		SetLayer();
 	}
 	
 	public void HeavyPunch()
 	{
 		animator.SetTrigger("highpunch");
-		Debug.Log ("HEAVY PUNCH");
+		SetLayer();
 	}
 	
 	public void HighPunch()
 	{
 		animator.SetTrigger ("highPunch");
-		Debug.Log ("HIGH PUNCH");
+		SetLayer();
 	}
 	
 	public void Kick()
 	{
 		Debug.Log ("KICK");
+		SetLayer();
 	}
 	
 	public void HeavyKick()
 	{
 		Debug.Log ("HEAVY KICK");
+		SetLayer();
 	}
 	
 	public void Block()
 	{
 		Debug.Log ("BLOCK");
 	}
+	
+	//Linker Joystick im Ruhezustand
+	public void LeftAxisReleased()
+	{
+		Ducking = false;
+		animator.SetBool("duck",Ducking);
+	}
+	
+	public void Die()
+	{
+		Destroy (this.gameObject);
+	}
+	
+	public void HitbyFist()
+	{
+		health-=10.0f;
+	}
+	
+	public void HitbyFeet(){}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
 	public void CheckForBlock(float MoveDir)
@@ -120,6 +157,15 @@ public class Player : MonoBehaviour {
 			{
 				Block();
 			}
+		}
+	}
+	
+	//Wird aufgerufen wenn man zuschlägt um VOR dem Gegner zu erscheinen
+	public void SetLayer()
+	{
+		if(Enemy.renderer.sortingOrder >= this.renderer.sortingOrder)
+		{
+			this.renderer.sortingOrder = Enemy.renderer.sortingOrder + 1;
 		}
 	}
 }
