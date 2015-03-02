@@ -45,6 +45,9 @@ public class Player : MonoBehaviour {
 		{
 			Die();
 		}
+		if (inAir)
+			animator.SetFloat("ySpeed",rigidbody2D.velocity.y);
+		
 
 	}
 
@@ -86,6 +89,8 @@ public class Player : MonoBehaviour {
             rigidbody2D.AddForce(new Vector2(0.0f, jump));
             inAir = true;
         }
+		//animator.SetFloat("ySpeed",rigidbody2D.velocity.y);
+		Debug.Log (rigidbody2D.velocity.y);
 	}
 	
 	public void Duck()
