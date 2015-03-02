@@ -134,6 +134,7 @@ public class Player : MonoBehaviour {
 	
 	public void Block()
 	{
+		animator.SetBool ("block", true);
 		//Debug.Log ("BLOCK");
 	}
 	
@@ -141,6 +142,8 @@ public class Player : MonoBehaviour {
 	public void LeftAxisReleased()
 	{
 		Ducking = false;
+		Blocking = false;
+		animator.SetBool ("block", Blocking);
 		animator.SetBool("duck",Ducking);
 	}
 	
@@ -199,6 +202,7 @@ public class Player : MonoBehaviour {
 		{
 			Blocking = false;
 		}
+		animator.SetBool ("block", Blocking);
 	}
 	
 	//Wird aufgerufen wenn man zuschlägt um VOR dem Gegner zu erscheinen
