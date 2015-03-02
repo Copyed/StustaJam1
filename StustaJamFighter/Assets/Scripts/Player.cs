@@ -84,6 +84,7 @@ public class Player : MonoBehaviour {
 	
 	public void HighPunch()
 	{
+		animator.SetTrigger ("highPunch");
 		Debug.Log ("HIGH PUNCH");
 	}
 	

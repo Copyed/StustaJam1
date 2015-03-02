@@ -249,8 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  PlayerNumber: 1
-  PlayerSpeed: 10
+  speed: 10
   Enemy: {fileID: 0}
 --- !u!4 &180204581
 Transform:
@@ -657,8 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  PlayerNumber: 1
-  PlayerSpeed: 10
+  speed: 10
   Enemy: {fileID: 0}
 --- !u!4 &1062611516
 Transform:
@@ -953,8 +951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794ebd29ea9d0054d981c5daf12ac037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 1062611510}
-  player2: {fileID: 180204574}
   players:
   - {fileID: 1062611515}
   - {fileID: 180204580}
