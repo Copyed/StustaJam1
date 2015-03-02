@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InputManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="146" Column="38" />
-      <File FileName="Assets\Scripts\cameraMovement.cs" Line="75" Column="1" />
-      <File FileName="Assets\Scripts\InputManager.cs" Line="225" Column="21" />
+      <File FileName="Assets\Scripts\Player.cs" Line="141" Column="23" />
+      <File FileName="Assets\Scripts\cameraMovement.cs" Line="52" Column="56" />
+      <File FileName="Assets\Scripts\InputManager.cs" Line="244" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1344,11 +1344,11 @@ Prefab:
     - target: {fileID: 11422492, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
       propertyPath: players.Array.data[0]
       value: 
-      objectReference: {fileID: 180204580}
+      objectReference: {fileID: 1062611515}
     - target: {fileID: 11422492, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
       propertyPath: players.Array.data[1]
       value: 
-      objectReference: {fileID: 1062611515}
+      objectReference: {fileID: 180204580}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b568e1deee1cd7842950ab39b412fede, type: 2}
   m_RootGameObject: {fileID: 1710769586}
@@ -1385,8 +1385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 180204580}
   - {fileID: 1062611515}
+  - {fileID: 180204580}
 --- !u!4 &1710769588
 Transform:
   m_ObjectHideFlags: 0
@@ -1410,8 +1410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cd36b448e2ec845af8f3fc29af3a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Controls: {fileID: 180204580}
-  Player2Controls: {fileID: 1062611515}
+  Player1Controls: {fileID: 1062611515}
+  Player2Controls: {fileID: 180204580}
   ErrorTolerance: .200000003
   JumpTolerance: .200000003
 --- !u!114 &1710769590

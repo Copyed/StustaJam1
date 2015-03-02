@@ -239,8 +239,9 @@ public class InputManager : MonoBehaviour {
 			{
 				if(Input.GetAxis("2LeftJoystickY")<0)
 				{
+					Debug.Log ("eins");
 					if((Mathf.Abs (Input.GetAxis("2LeftJoystickX"))) < JumpTolerance)
-					{
+					{Debug.Log ("zwei");
 						Player2Controls.Jump();
 					}
 				}
