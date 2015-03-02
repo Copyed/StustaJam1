@@ -118,7 +118,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2, y: 4.5}
+  m_Size: {x: 2, y: 4.69999981}
   m_Center: {x: -.5, y: .0399999991}
 --- !u!95 &22353898
 Animator:
@@ -580,7 +580,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6118862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Size.y
-      value: 4.5
+      value: 4.69999981
       objectReference: {fileID: 0}
     - target: {fileID: 6118862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Center.y
@@ -602,6 +602,10 @@ Prefab:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 5021360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710fb96625452b548b9dd580832ac593, type: 2}
   m_RootGameObject: {fileID: 22353895}
@@ -622,6 +626,7 @@ GameObject:
   - 95: {fileID: 1062611517}
   - 61: {fileID: 1062611512}
   - 61: {fileID: 1062611518}
+  - 58: {fileID: 1062611519}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -651,7 +656,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2, y: 4.5}
+  m_Size: {x: 2, y: 4.69999981}
   m_Center: {x: -.5, y: .0399999991}
 --- !u!50 &1062611513
 Rigidbody2D:
@@ -746,6 +751,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.45667553, y: 1.13814306}
   m_Center: {x: -.584149122, y: -2.16225219}
+--- !u!58 &1062611519
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062611510}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .5
+  m_Center: {x: .100000001, y: -1.96000004}
 --- !u!1 &1367662552
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +881,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6118862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Size.y
-      value: 4.5
+      value: 4.69999981
       objectReference: {fileID: 0}
     - target: {fileID: 6118862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Center.y
@@ -878,6 +894,10 @@ Prefab:
     - target: {fileID: 6118862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_Center.x
       value: -.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710fb96625452b548b9dd580832ac593, type: 2}
