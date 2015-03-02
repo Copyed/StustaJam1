@@ -6,12 +6,17 @@ public class Player : MonoBehaviour {
 
     public float health = 100.0f;
     public float speed = 10.0f;
+    public float jump = 200.0f;
 
 	private Animator animator;
 	public Player Enemy;
 	
 	public bool Ducking = false;
+<<<<<<< HEAD
 	public bool Blocking = false;
+=======
+    public bool inAir = true;
+>>>>>>> dd142f69aa53637ded6aedd8dffbb05ade9e97aa
 
 
 	// Use this for initialization
@@ -22,9 +27,9 @@ public class Player : MonoBehaviour {
 		foreach(Player player in GameManager.instance.players)
 		{
            		 if (player != this)
-			{
+			    {
                 		Enemy = player;
-            		}
+            	}
 		}
 		
 	
@@ -37,18 +42,7 @@ public class Player : MonoBehaviour {
 	
 		if(Enemy != null)
 		{
-			Quaternion old = transform.rotation;
-			
-			// Links vom Gegner
-			if(this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
-			{
-				transform.rotation = new Quaternion(old.x,0,old.z,old.w);
-	        }
-            // Rechts vom Gegner
-			if(this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
-			{
-				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
-			}
+            faceEnemy();
 		}
 		
 		if(health <= 0)
@@ -56,16 +50,32 @@ public class Player : MonoBehaviour {
 			Die();
 		}
 
+        if(rigidbody2D.velocity.y < 0)
+        {
+            Debug.Log("Falling "+Time.time);
+        }
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    void faceEnemy()
     {
-        //Debug.Log("Collided with "+ other.gameObject.name+" "+other.gameObject.tag);
+        Quaternion old = transform.rotation;
+
+        // Links vom Gegner
+        if (this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
+        {
+            transform.rotation = new Quaternion(old.x, 0, old.z, old.w);
+        }
+        // Rechts vom Gegner
+        if (this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
+        {
+            transform.rotation = new Quaternion(old.x, 180, old.z, old.w);
+        }
     }
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-	}
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground") inAir = false;
+    }
     
 	
 	public void MovePlayer(float StickMove)
@@ -79,7 +89,11 @@ public class Player : MonoBehaviour {
 	public void Jump()
 	{
 		//Player Jump
-		Debug.Log ("JUMP "+Time.time);
+        if (!inAir)
+        {
+            rigidbody2D.AddForce(new Vector2(0.0f, jump));
+            inAir = true;
+        }
 	}
 	
 	public void Duck()

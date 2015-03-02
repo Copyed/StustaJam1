@@ -168,7 +168,11 @@ public class InputManager : MonoBehaviour {
 	}
 	
 	public void CheckAxis()
-	{
+	{	//Max camera test
+		if (Input.GetKeyDown("k"))
+			Camera.main.GetComponent<cameraMovement>().plusSize();
+		if (Input.GetKeyDown("l"))
+			Camera.main.GetComponent<cameraMovement>().minusSize();
 
 		if(NumControllers == 0)
 		{
@@ -188,6 +192,7 @@ public class InputManager : MonoBehaviour {
             {
                 Player1Controls.Punch();
             }
+
 		}
 	
 		if(NumControllers > 0)

@@ -254,6 +254,7 @@ MonoBehaviour:
   health: 100
   speed: 10
   Enemy: {fileID: 0}
+  Ducking: 0
 --- !u!4 &180204581
 Transform:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688594897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3999996, y: -5.6500001, z: 0}
+  m_LocalPosition: {x: 28.3999996, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -572,7 +573,8 @@ MonoBehaviour:
   rightBorder: {fileID: 688594898}
   inverseCameraSize: 2.29999995
   minSize: 4.13999987
-  hoehenfaktor: 2
+  hoehenfaktor: 1
+  heightoffset: -5
 --- !u!1 &1062611510
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +674,7 @@ MonoBehaviour:
   health: 100
   speed: 10
   Enemy: {fileID: 0}
+  Ducking: 0
 --- !u!4 &1062611516
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,8 +1128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c3cb0f5f02af248933bcf7548ba0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarLeft: {fileID: 1065174368}
-  healthBarRight: {fileID: 1765683242}
+  healthBarLeft: {fileID: 0}
+  healthBarRight: {fileID: 0}
   healthBarScaling: .100000001
 --- !u!1 &1765683242
 GameObject:

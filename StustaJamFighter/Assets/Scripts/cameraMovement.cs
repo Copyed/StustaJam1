@@ -9,6 +9,8 @@ public class cameraMovement : MonoBehaviour {
 	public float inverseCameraSize = 2.3f;
 	public float minSize = 3f;
 	public float hoehenfaktor = 2f;
+	public float heightoffset = -1f;
+
 
 	private Vector3 lB;
 	private Vector3 rB;
@@ -18,39 +20,58 @@ public class cameraMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		players = GameManager.instance.players;
-		lB = leftBorder.position + new Vector3 (2f*camera.orthographicSize, 0f, transform.position.z);
-		rB = rightBorder.position + new Vector3 (-2f*camera.orthographicSize, 0f, transform.position.z);
-	
+		Debug.Log (players.Length);
+		DetermineBorders ();
+	}
+
+	void DetermineBorders(){
+		lB = leftBorder.position + new Vector3 (2f*camera.orthographicSize, transform.position.y, transform.position.z);
+		rB = rightBorder.position + new Vector3 (-2f*camera.orthographicSize, transform.position.y, transform.position.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		float newSize = Mathf.Abs (players [0].transform.position.x - players [1].transform.position.x) /inverseCameraSize;
-		if (newSize > 9.2f)
-			transform.position = new Vector3 (transform.position.x, 1f + (newSize - 9.2f) * hoehenfaktor, transform.position.z);
-		camera.orthographicSize = newSize > minSize ? newSize : minSize;
-
-		lB = leftBorder.position + new Vector3 (2f*camera.orthographicSize, 0f, transform.position.z);
-		rB = rightBorder.position + new Vector3 (-2f*camera.orthographicSize, 0f, transform.position.z);
-
-
 		//Determine center of players
 		float xAverage = 0f;
 		foreach (var item in players) {
 			xAverage += item.gameObject.transform.position.x;
 		}
-		xAverage /= (float)players.Length;
+		xAverage *= 0.5f;
+		
+		DetermineBorders ();
+		xAverage = Mathf.Max (xAverage, lB.x);
+		xAverage = Mathf.Min (xAverage, rB.x);
 
-		//set camera to midpoint
-		if (xAverage < lB.x)
-			transform.position = lB;
-		else if (xAverage > rB.x)
-			transform.position = rB;
-		else
-			transform.position = new Vector3 (xAverage, transform.position.y, transform.position.z);
+		float leftPlayerx = Mathf.Min (players [0].transform.position.x, players [1].transform.position.x);
+		float rightPlayerx = Mathf.Max (players [0].transform.position.x, players [1].transform.position.x);
+		float sizeBorder1 = Mathf.Max (leftPlayerx, lB.x);
+		float sizeBorder2 = Mathf.Min (rightPlayerx, rB.x);
+		Debug.Log (sizeBorder1);
+		if (sizeBorder1 > 0f)
+			return;
+
+		float newSize = Mathf.Abs (leftPlayerx - rightPlayerx)/inverseCameraSize;
+		changeSize(Mathf.Max(minSize,newSize));
 
 
+		transform.position = new Vector3 (xAverage, transform.position.y, transform.position.z);
+
+	
 
 	}
+
+	private void changeSize(float amount){
+		//float temp = camera.orthographicSize * amount;
+		transform.position = new Vector3 (transform.position.x, hoehenfaktor * amount + heightoffset, transform.position.z);
+		camera.orthographicSize = amount;
+	}
+
+	public void plusSize(){
+		changeSize (1.1f);
+	}
+	public void minusSize(){
+		changeSize (0.9f);
+	}
+	
+
 }
