@@ -179,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 180204574}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 77e84296bce10d04498ced8ad63015fc, type: 2}
+  m_Controller: {fileID: 22100000, guid: 79f876a911b5ce14ba8054ad05e3fc16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -394,7 +394,7 @@ GameObject:
   m_Layer: 0
   m_Name: rightBorder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -405,7 +405,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688594897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.8999996, y: 1, z: 0}
+  m_LocalPosition: {x: 11.3999996, y: -5.6500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -453,6 +453,11 @@ Prefab:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 9518862, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 79f876a911b5ce14ba8054ad05e3fc16,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710fb96625452b548b9dd580832ac593, type: 2}
   m_RootGameObject: {fileID: 180204574}
@@ -519,7 +524,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.22869873
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -538,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 902194184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .430000007, z: -10.1400003}
+  m_LocalPosition: {x: 7.15999985, y: -.280000001, z: -10.1400003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,8 +1083,8 @@ GameObject:
   - 4: {fileID: 2137617201}
   m_Layer: 0
   m_Name: leftBorder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Border
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
