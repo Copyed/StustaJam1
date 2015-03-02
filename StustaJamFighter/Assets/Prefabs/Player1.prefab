@@ -181,8 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 10
+  jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  inAir: 1
 --- !u!114 &11443278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +260,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2626329131
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3300b1611b73a664eb2f96eb41b977a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 610b4c1ff9cd19940916cf64e3efb1d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

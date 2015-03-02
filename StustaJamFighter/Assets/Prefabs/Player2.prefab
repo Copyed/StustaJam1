@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 416944}
   - 212: {fileID: 21216944}
   - 58: {fileID: 5816944}
+  - 114: {fileID: 11430570}
   - 114: {fileID: 11416948}
   m_Layer: 0
   m_Name: Faust
@@ -28,6 +29,7 @@ GameObject:
   - 4: {fileID: 416946}
   - 212: {fileID: 21216946}
   - 58: {fileID: 5816946}
+  - 114: {fileID: 11430568}
   - 114: {fileID: 11416944}
   - 114: {fileID: 11416946}
   m_Layer: 0
@@ -68,7 +70,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497560}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &416946
 Transform:
   m_ObjectHideFlags: 1
@@ -80,7 +82,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497560}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &497560
 Transform:
   m_ObjectHideFlags: 1
@@ -88,11 +90,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.50999999, z: 0}
+  m_LocalPosition: {x: 14.71, y: -.50999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 416946}
   - {fileID: 416944}
+  - {fileID: 416946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5097560
@@ -152,7 +154,7 @@ Animator:
   m_GameObject: {fileID: 197560}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 77e84296bce10d04498ced8ad63015fc, type: 2}
+  m_Controller: {fileID: 22100000, guid: 79f876a911b5ce14ba8054ad05e3fc16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -160,7 +162,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11416944
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116946}
@@ -171,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &11416946
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116946}
@@ -182,13 +184,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &11416948
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116944}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea7f1ba7d4453b4694527b62286d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11430568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11430570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11497560
@@ -204,8 +228,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 10
+  jump: 200
   Enemy: {fileID: 0}
   Ducking: 0
+  inAir: 1
 --- !u!212 &21216944
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -270,7 +296,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2626329131
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3300b1611b73a664eb2f96eb41b977a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 610b4c1ff9cd19940916cf64e3efb1d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
