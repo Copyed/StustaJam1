@@ -234,8 +234,8 @@ public class InputManager : MonoBehaviour {
 			{
 				Player2Controls.MovePlayer(Input.GetAxis("2LeftJoystickX"));
 			}
-			
-			if(CheckforError(Input.GetAxis ("LeftJoystickY")) != 0)
+			Debug.Log (Input.GetAxis("LeftJoystickY") + " and " + Input.GetAxis("2LeftJoystickY"));
+			if(CheckforError(Input.GetAxis ("2LeftJoystickY")) != 0)
 			{
 				if(Input.GetAxis("2LeftJoystickY")<0)
 				{
