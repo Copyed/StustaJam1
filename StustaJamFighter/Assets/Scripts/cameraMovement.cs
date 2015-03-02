@@ -34,9 +34,15 @@ public class cameraMovement : MonoBehaviour {
 	void Update () {
 		//Determine center of players
 		float xAverage = 0f;
-		foreach (var item in players) {
+		/*foreach (var item in players) {
 			xAverage += item.gameObject.transform.position.x;
+		}*/
+		
+		for ( int i = 0; i < players.Length; i++ )
+		{
+			xAverage += players[i].gameObject.transform.position.x;
 		}
+		
 		xAverage *= 0.5f;
 		
 		DetermineBorders ();

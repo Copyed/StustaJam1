@@ -86,8 +86,6 @@ GameObject:
   - 212: {fileID: 96624986}
   - 58: {fileID: 96624985}
   - 114: {fileID: 96624984}
-  - 114: {fileID: 96624988}
-  - 114: {fileID: 96624987}
   m_Layer: 0
   m_Name: Beine
   m_TagString: Untagged
@@ -110,13 +108,12 @@ Transform:
 --- !u!114 &96624984
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11430568, guid: aeb206eb3e0e24748b8e8329eac1a55f,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 96624982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &96624985
@@ -154,30 +151,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &96624987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11416946, guid: aeb206eb3e0e24748b8e8329eac1a55f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96624982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &96624988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11416944, guid: aeb206eb3e0e24748b8e8329eac1a55f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96624982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &106771657
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +346,6 @@ GameObject:
   - 212: {fileID: 278486843}
   - 58: {fileID: 278486842}
   - 114: {fileID: 278486841}
-  - 114: {fileID: 278486845}
   m_Layer: 0
   m_Name: Faust
   m_TagString: Untagged
@@ -384,13 +356,12 @@ GameObject:
 --- !u!114 &278486841
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11430570, guid: aeb206eb3e0e24748b8e8329eac1a55f,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 278486840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: bea7f1ba7d4453b4694527b62286d8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &278486842
@@ -440,18 +411,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 180204581}
   m_RootOrder: 0
---- !u!114 &278486845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11416948, guid: aeb206eb3e0e24748b8e8329eac1a55f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 278486840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &358545691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,13 +972,12 @@ Transform:
 --- !u!114 &1416108521
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11443278, guid: 710fb96625452b548b9dd580832ac593,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416108519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5ad8f9fc82828b94baabf13734682539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &1416108522
@@ -1230,13 +1188,12 @@ GameObject:
 --- !u!114 &1461760479
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11406998, guid: 710fb96625452b548b9dd580832ac593,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1461760478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: bea7f1ba7d4453b4694527b62286d8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &1461760480
@@ -1425,8 +1382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c3cb0f5f02af248933bcf7548ba0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarLeft: {fileID: 0}
-  healthBarRight: {fileID: 0}
+  healthBarLeft: {fileID: 1065174368}
+  healthBarRight: {fileID: 1765683242}
   healthBarScaling: .100000001
 --- !u!1 &1765683242
 GameObject:

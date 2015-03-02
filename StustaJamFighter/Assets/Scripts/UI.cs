@@ -15,6 +15,7 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		Debug.Log (GameManager.instance.players[1].health+" "+GameManager.instance.players[0].health);
 	
 		if(healthBarLeft != null)
 		{
