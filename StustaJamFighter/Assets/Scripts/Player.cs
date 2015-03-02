@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 	public Player Enemy;
 	
 	public bool Ducking = false;
+	public bool Blocking = false;
 
 
 	// Use this for initialization
@@ -137,10 +138,27 @@ public class Player : MonoBehaviour {
 	
 	public void HitbyFist()
 	{
-		health-=10.0f;
+		if(Blocking)
+		{
+			health -= 3.0f;
+		}
+		else
+		{
+			health-= 9.0f;
+		}
 	}
 	
-	public void HitbyFeet(){}
+	public void HitbyFeet()
+	{
+		if(Blocking)
+		{
+			health -= 4.0f;
+		}
+		else
+		{
+			health-=12.0f;
+		}
+	}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
 	public void CheckForBlock(float MoveDir)
@@ -151,12 +169,22 @@ public class Player : MonoBehaviour {
 			if(Enemy.transform.position.x > this.transform.position.x && MoveDir < 0)
 			{
 				Block();
+				Blocking = true;
 			}
 			//Gegner ist links von mir
 			else if (Enemy.transform.position.x < this.transform.position.x && MoveDir > 0)
 			{
 				Block();
+				Blocking = true;
 			}
+			else
+			{
+				Blocking = false;
+			}
+		}
+		else
+		{
+			Blocking = false;
 		}
 	}
 	
