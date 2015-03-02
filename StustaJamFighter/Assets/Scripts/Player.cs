@@ -12,11 +12,8 @@ public class Player : MonoBehaviour {
 	public Player Enemy;
 	
 	public bool Ducking = false;
-<<<<<<< HEAD
 	public bool Blocking = false;
-=======
     public bool inAir = true;
->>>>>>> dd142f69aa53637ded6aedd8dffbb05ade9e97aa
 
 
 	// Use this for initialization
