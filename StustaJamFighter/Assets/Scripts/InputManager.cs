@@ -180,6 +180,10 @@ public class InputManager : MonoBehaviour {
 			{
 				Player1Controls.MovePlayer(1);
 			}
+            if(Input.GetKey("w"))
+            {
+                Player1Controls.Jump();
+            }
             if (Input.GetKeyDown("x"))
             {
                 Player1Controls.Punch();

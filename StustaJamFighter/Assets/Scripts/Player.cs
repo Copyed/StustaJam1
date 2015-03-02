@@ -6,6 +6,9 @@ public class Player : MonoBehaviour {
 
     public float health = 100.0f;
     public float speed = 10.0f;
+    public float jump = 10.0f;
+
+    private bool inAir;
 
 	private Animator animator;
 	public Player Enemy;
@@ -37,33 +40,39 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+        if(rigidbody2D.velocity.y < 0)
+        {
+            // TODO: change animation to falling
+        }
+
 		if(Enemy != null)
 		{
-			Quaternion old = transform.rotation;
-			
-			// Links vom Gegner
-			if(this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
-			{
-				transform.rotation = new Quaternion(old.x,0,old.z,old.w);
-	        }
-            // Rechts vom Gegner
-			if(this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
-			{
-				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
-			}
+            faceEnemy();
 		}
 
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    public void faceEnemy()
     {
-        Debug.Log("Collided with "+other.gameObject.name+" "+other.gameObject.tag);
+        Quaternion old = transform.rotation;
+
+        // Links vom Gegner
+        if (this.transform.position.x < Enemy.transform.position.x && this.transform.rotation.y != 0)
+        {
+            transform.rotation = new Quaternion(old.x, 0, old.z, old.w);
+        }
+        // Rechts vom Gegner
+        if (this.transform.position.x > Enemy.transform.position.x && this.transform.rotation.y != 180)
+        {
+            transform.rotation = new Quaternion(old.x, 180, old.z, old.w);
+        }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log("Collided with " + other.gameObject.name + " " + other.gameObject.tag);
+        Debug.Log("Collided staying with " + other.gameObject.name + " " + other.gameObject.tag);
+        if(other.gameObject.tag == "Ground")inAir = false;
     }
 	
 	public void MovePlayer(float StickMove)
@@ -78,6 +87,12 @@ public class Player : MonoBehaviour {
 	{
 		//Player Jump
 		Debug.Log ("JUMP "+Time.time);
+        if (!inAir)
+        {
+            rigidbody2D.AddForce(new Vector2(0.0f, jump));
+            inAir = true;
+        }
+            
 	}
 	
 	public void Duck()
