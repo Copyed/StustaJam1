@@ -12,8 +12,8 @@ public class Player : MonoBehaviour {
 	public Player Enemy;
 	
 	public bool Ducking = false;
-    public bool inAir = true;
-
+	public bool Blocking = false;
+    public bool inAir;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +27,6 @@ public class Player : MonoBehaviour {
                 		Enemy = player;
             	}
 		}
-		
-	
-		
 	}
 	
 	// Update is called once per frame
@@ -46,10 +43,11 @@ public class Player : MonoBehaviour {
 			Die();
 		}
 
-        if(rigidbody2D.velocity.y < 0)
+        if (rigidbody2D.velocity.y < 0)
         {
-            Debug.Log("Falling "+Time.time);
+            Debug.Log("Falling " + Time.time);
         }
+
 	}
 
     void faceEnemy()
@@ -131,7 +129,7 @@ public class Player : MonoBehaviour {
 	
 	public void Block()
 	{
-		Debug.Log ("BLOCK");
+		//Debug.Log ("BLOCK");
 	}
 	
 	//Linker Joystick im Ruhezustand
@@ -148,10 +146,27 @@ public class Player : MonoBehaviour {
 	
 	public void HitbyFist()
 	{
-		health-=10.0f;
+		if(Blocking)
+		{
+			health -= 3.0f;
+		}
+		else
+		{
+			health-= 9.0f;
+		}
 	}
 	
-	public void HitbyFeet(){}
+	public void HitbyFeet()
+	{
+		if(Blocking)
+		{
+			health -= 4.0f;
+		}
+		else
+		{
+			health-=12.0f;
+		}
+	}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
 	public void CheckForBlock(float MoveDir)
@@ -162,12 +177,22 @@ public class Player : MonoBehaviour {
 			if(Enemy.transform.position.x > this.transform.position.x && MoveDir < 0)
 			{
 				Block();
+				Blocking = true;
 			}
 			//Gegner ist links von mir
 			else if (Enemy.transform.position.x < this.transform.position.x && MoveDir > 0)
 			{
 				Block();
+				Blocking = true;
 			}
+			else
+			{
+				Blocking = false;
+			}
+		}
+		else
+		{
+			Blocking = false;
 		}
 	}
 	

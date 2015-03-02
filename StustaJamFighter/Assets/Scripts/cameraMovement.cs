@@ -8,6 +8,7 @@ public class cameraMovement : MonoBehaviour {
 
 	public float inverseCameraSize = 2.3f;
 	public float minSize = 3f;
+    public float maxSize = 15f;
 	public float hoehenfaktor = 2f;
 	public float heightoffset = -1f;
 
@@ -46,24 +47,19 @@ public class cameraMovement : MonoBehaviour {
 		float rightPlayerx = Mathf.Max (players [0].transform.position.x, players [1].transform.position.x);
 		float sizeBorder1 = Mathf.Max (leftPlayerx, lB.x);
 		float sizeBorder2 = Mathf.Min (rightPlayerx, rB.x);
-		Debug.Log (sizeBorder1);
-		//if (sizeBorder1 > 0f)
-		//	return;
 
 		float newSize = Mathf.Abs (leftPlayerx - rightPlayerx)/inverseCameraSize;
-		Debug.Log ("newsize " + newSize);
 		changeSize(Mathf.Max(minSize,newSize));
 
 
 		transform.position = new Vector3 (xAverage, transform.position.y, transform.position.z);
 
-	
-
 	}
 
 	private void changeSize(float amount){
 		//float temp = camera.orthographicSize * amount;
-		transform.position = new Vector3 (transform.position.x, hoehenfaktor * amount + heightoffset, transform.position.z);
+        amount = Mathf.Min(amount, maxSize);
+		transform.position = new Vector3 (transform.position.x, amount + heightoffset, transform.position.z);
 		camera.orthographicSize = amount;
 	}
 
