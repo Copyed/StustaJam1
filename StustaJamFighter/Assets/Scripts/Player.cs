@@ -13,8 +13,7 @@ public class Player : MonoBehaviour {
 	
 	public bool Ducking = false;
 	public bool Blocking = false;
-    public bool inAir = true;
-
+    public bool inAir;
 
 	// Use this for initialization
 	void Start () {
@@ -28,9 +27,6 @@ public class Player : MonoBehaviour {
                 		Enemy = player;
             	}
 		}
-		
-	
-		
 	}
 	
 	// Update is called once per frame
@@ -47,10 +43,11 @@ public class Player : MonoBehaviour {
 			Die();
 		}
 
-        if(rigidbody2D.velocity.y < 0)
+        if (rigidbody2D.velocity.y < 0)
         {
-            Debug.Log("Falling "+Time.time);
+            Debug.Log("Falling " + Time.time);
         }
+
 	}
 
     void faceEnemy()
@@ -132,7 +129,7 @@ public class Player : MonoBehaviour {
 	
 	public void Block()
 	{
-		Debug.Log ("BLOCK");
+		//Debug.Log ("BLOCK");
 	}
 	
 	//Linker Joystick im Ruhezustand
