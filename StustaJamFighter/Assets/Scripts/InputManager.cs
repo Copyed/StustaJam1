@@ -211,6 +211,10 @@ public class InputManager : MonoBehaviour {
 					}
 				}
 			}
+			if(CheckforError(Input.GetAxis("LeftJoystickX")) == 0 && CheckforError(Input.GetAxis("LeftJoystickY")) == 0)
+			{
+				Player1Controls.LeftAxisReleased();
+			}
 			
 		}
 		
@@ -238,6 +242,11 @@ public class InputManager : MonoBehaviour {
 						Player2Controls.Duck();
 					}
 				}
+			}
+			
+			if(CheckforError(Input.GetAxis("2LeftJoystickX")) == 0 && CheckforError(Input.GetAxis("2LeftJoystickY")) == 0)
+			{
+				Player2Controls.LeftAxisReleased();
 			}
 			
 		}

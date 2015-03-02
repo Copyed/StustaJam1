@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class Player : MonoBehaviour {
 
 	private Animator animator;
 	public Player Enemy;
+	
+	public bool Ducking = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +20,19 @@ public class Player : MonoBehaviour {
         //Findet den Gegner um ihn immer anzuvisieren
 		foreach(Player player in GameManager.instance.players)
 		{
-            if (player != this)
+           		 if (player != this)
 			{
-                Enemy = player;
-            }
+                		Enemy = player;
+            		}
 		}
+		
+		
+		CircleCollider2D[] Arr = GetComponents<CircleCollider2D>();
+		foreach(CircleCollider2D Col in Arr)
+		{
+			Col.enabled = false;
+		}
+		
 	}
 	
 	// Update is called once per frame
@@ -71,37 +83,48 @@ public class Player : MonoBehaviour {
 	public void Duck()
 	{
 		Debug.Log ("DUCK "+Time.time);
+		Ducking = true;
 	}
 	
 	public void Punch()
 	{
 		animator.SetTrigger ("punch");
+		SetLayer();
 	}
 	
 	public void HeavyPunch()
 	{
-		Debug.Log ("HEAVY PUNCH");
+		animator.SetTrigger("highpunch");
+		SetLayer();
 	}
 	
 	public void HighPunch()
 	{
 		animator.SetTrigger ("highPunch");
-		Debug.Log ("HIGH PUNCH");
+		SetLayer();
 	}
 	
 	public void Kick()
 	{
 		Debug.Log ("KICK");
+		SetLayer();
 	}
 	
 	public void HeavyKick()
 	{
 		Debug.Log ("HEAVY KICK");
+		SetLayer();
 	}
 	
 	public void Block()
 	{
 		Debug.Log ("BLOCK");
+	}
+	
+	//Linker Joystick im Ruhezustand
+	public void LeftAxisReleased()
+	{
+		Ducking = false;
 	}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
@@ -119,6 +142,15 @@ public class Player : MonoBehaviour {
 			{
 				Block();
 			}
+		}
+	}
+	
+	//Wird aufgerufen wenn man zuschlägt um VOR dem Gegner zu erscheinen
+	public void SetLayer()
+	{
+		if(Enemy.renderer.sortingOrder >= this.renderer.sortingOrder)
+		{
+			this.renderer.sortingOrder = Enemy.renderer.sortingOrder + 1;
 		}
 	}
 }
