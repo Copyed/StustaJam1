@@ -59,6 +59,7 @@ public class Player : MonoBehaviour {
 		animator.SetFloat ("movSpeed", StickMove);
 		Vector3 old = transform.position;
 		transform.position = new Vector3(old.x + speed * StickMove * Time.deltaTime,old.y,old.z);
+		CheckForBlock(StickMove);
 	}
 	
 	public void Jump()
@@ -96,5 +97,28 @@ public class Player : MonoBehaviour {
 	public void HeavyKick()
 	{
 		Debug.Log ("HEAVY KICK");
+	}
+	
+	public void Block()
+	{
+		Debug.Log ("BLOCK");
+	}
+	
+	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
+	public void CheckForBlock(float MoveDir)
+	{
+		if(Enemy != null)
+		{
+			//Gegner ist rechts von mir
+			if(Enemy.transform.position.x > this.transform.position.x && MoveDir < 0)
+			{
+				Block();
+			}
+			//Gegner ist links von mir
+			else if (Enemy.transform.position.x < this.transform.position.x && MoveDir > 0)
+			{
+				Block();
+			}
+		}
 	}
 }
