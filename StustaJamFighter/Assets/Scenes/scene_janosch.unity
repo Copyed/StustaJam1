@@ -201,7 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 10
+  jump: 10
+  inAir: 0
   Enemy: {fileID: 1062611515}
+  Ducking: 0
 --- !u!4 &22353903
 Transform:
   m_ObjectHideFlags: 0
@@ -711,7 +714,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 10
+  jump: 200
+  inAir: 0
   Enemy: {fileID: 0}
+  Ducking: 0
 --- !u!4 &1062611516
 Transform:
   m_ObjectHideFlags: 0
@@ -774,7 +780,7 @@ GameObject:
   - 61: {fileID: 1367662553}
   m_Layer: 0
   m_Name: boden
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -898,6 +904,10 @@ Prefab:
     - target: {fileID: 5021360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_GravityScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: jump
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710fb96625452b548b9dd580832ac593, type: 2}

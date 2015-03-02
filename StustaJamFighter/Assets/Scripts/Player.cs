@@ -6,9 +6,9 @@ public class Player : MonoBehaviour {
 
     public float health = 100.0f;
     public float speed = 10.0f;
-    public float jump = 10.0f;
+    public float jump = 200.0f;
 
-    private bool inAir;
+    public bool inAir;
 
 	private Animator animator;
 	public Player Enemy;
@@ -72,7 +72,9 @@ public class Player : MonoBehaviour {
     void OnCollisionStay2D(Collision2D other)
     {
         Debug.Log("Collided staying with " + other.gameObject.name + " " + other.gameObject.tag);
-        if(other.gameObject.tag == "Ground")inAir = false;
+        // if player is resting on the ground then he is not inAir
+        // in air is used, that player can only jump while on ground
+        if(other.gameObject.tag == "Ground") inAir = false;
     }
 	
 	public void MovePlayer(float StickMove)
