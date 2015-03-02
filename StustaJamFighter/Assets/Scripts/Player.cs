@@ -44,12 +44,7 @@ public class Player : MonoBehaviour {
 		}
 		if (inAir)
 			animator.SetFloat("ySpeed",rigidbody2D.velocity.y);
-		
 
-        if (rigidbody2D.velocity.y < 0)
-        {
-            Debug.Log("Falling " + Time.time);
-        }
 
 	}
 
@@ -161,7 +156,7 @@ public class Player : MonoBehaviour {
 	
 	public void HitbyFist()
 	{
-		animator.SetTrigger ("isHit");
+	
 		if(Blocking)
 		{
 			health -= 3.0f;
