@@ -169,8 +169,8 @@ public class InputManager : MonoBehaviour {
 	
 	public void CheckAxis()
 	{	//Max camera test
-		if (Input.GetKeyDown("k"))
-			Camera.main.GetComponent<cameraMovement>().plusSize();
+		if (Input.GetKeyDown ("k"))
+			Player1Controls.Die ();
 		if (Input.GetKeyDown("l"))
 			Camera.main.GetComponent<cameraMovement>().minusSize();
 

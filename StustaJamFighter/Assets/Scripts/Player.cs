@@ -149,6 +149,13 @@ public class Player : MonoBehaviour {
 	
 	public void Die()
 	{
+		animator.SetTrigger ("die");
+		//does not work    	this.enabled = false;
+		//GetComponent<BoxCollider2D> ().enabled = false;
+		Invoke ("DieDestroy", 5.0f);
+	}
+
+	public void DieDestroyer(){
 		Destroy (this.gameObject);
 	}
 	
