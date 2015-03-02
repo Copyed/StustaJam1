@@ -26,17 +26,13 @@ public class Player : MonoBehaviour {
             		}
 		}
 		
-		
-		CircleCollider2D[] Arr = GetComponents<CircleCollider2D>();
-		foreach(CircleCollider2D Col in Arr)
-		{
-			Col.enabled = false;
-		}
+	
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
 	
 		if(Enemy != null)
 		{
@@ -53,18 +49,23 @@ public class Player : MonoBehaviour {
 				transform.rotation = new Quaternion(old.x,180,old.z,old.w);
 			}
 		}
+		
+		if(health <= 0)
+		{
+			Die();
+		}
 
 	}
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collided with "+other.gameObject.name+" "+other.gameObject.tag);
+        //Debug.Log("Collided with "+ other.gameObject.name+" "+other.gameObject.tag);
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Collided with " + other.gameObject.name + " " + other.gameObject.tag);
-    }
+	void OnTriggerEnter2D(Collider2D other)
+	{
+	}
+    
 	
 	public void MovePlayer(float StickMove)
 	{
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log ("DUCK "+Time.time);
 		Ducking = true;
+		animator.SetBool ("duck",Ducking);
 	}
 	
 	public void Punch()
@@ -125,7 +127,20 @@ public class Player : MonoBehaviour {
 	public void LeftAxisReleased()
 	{
 		Ducking = false;
+		animator.SetBool("duck",Ducking);
 	}
+	
+	public void Die()
+	{
+		Destroy (this.gameObject);
+	}
+	
+	public void HitbyFist()
+	{
+		health-=10.0f;
+	}
+	
+	public void HitbyFeet(){}
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
 	public void CheckForBlock(float MoveDir)
