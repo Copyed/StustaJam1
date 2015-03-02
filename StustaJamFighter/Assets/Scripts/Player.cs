@@ -154,6 +154,7 @@ public class Player : MonoBehaviour {
 	
 	public void HitbyFist()
 	{
+		animator.SetTrigger ("isHit");
 		if(Blocking)
 		{
 			health -= 3.0f;
