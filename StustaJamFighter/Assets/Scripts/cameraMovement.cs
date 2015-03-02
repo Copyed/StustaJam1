@@ -13,8 +13,8 @@ public class cameraMovement : MonoBehaviour {
 	public float heightoffset = -1f;
 
 
-	private Vector3 lB;
-	private Vector3 rB;
+	private float lB;
+	private float rB;
 
 	private Player[] players;
 
@@ -26,8 +26,8 @@ public class cameraMovement : MonoBehaviour {
 	}
 
 	void DetermineBorders(){
-		lB = leftBorder.position + new Vector3 (2f*camera.orthographicSize, transform.position.y, transform.position.z);
-		rB = rightBorder.position + new Vector3 (-2f*camera.orthographicSize, transform.position.y, transform.position.z);
+		lB = leftBorder.position.x + camera.aspect*camera.orthographicSize;
+		rB = rightBorder.position.x - camera.aspect*camera.orthographicSize;
 	}
 	
 	// Update is called once per frame
@@ -40,13 +40,14 @@ public class cameraMovement : MonoBehaviour {
 		xAverage *= 0.5f;
 		
 		DetermineBorders ();
-		xAverage = Mathf.Max (xAverage, lB.x);
-		xAverage = Mathf.Min (xAverage, rB.x);
+		xAverage = Mathf.Max (xAverage, lB);
+		//Debug.Log ("lb " + lB);
+		xAverage = Mathf.Min (xAverage, rB);
 
 		float leftPlayerx = Mathf.Min (players [0].transform.position.x, players [1].transform.position.x);
 		float rightPlayerx = Mathf.Max (players [0].transform.position.x, players [1].transform.position.x);
-		float sizeBorder1 = Mathf.Max (leftPlayerx, lB.x);
-		float sizeBorder2 = Mathf.Min (rightPlayerx, rB.x);
+		float sizeBorder1 = Mathf.Max (leftPlayerx, lB);
+		float sizeBorder2 = Mathf.Min (rightPlayerx, rB);
 
 		float newSize = Mathf.Abs (leftPlayerx - rightPlayerx)/inverseCameraSize;
 		changeSize(Mathf.Max(minSize,newSize));
