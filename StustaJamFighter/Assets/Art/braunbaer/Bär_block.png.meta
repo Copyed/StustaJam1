@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 1190c31059dcd0142aef0078dbf1e4cb
+guid: 011b478ae02f8774487225f5e5218ed7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "schwarzB\xE4r_walk1.png_0"
-    21300002: "schwarzB\xE4r_walk1.png_1"
-    21300004: "schwarzB\xE4r_walk1.png_2"
-    21300006: "schwarzB\xE4r_walk1.png_3"
+    21300000: "B\xE4r_block_0"
+    21300002: "B\xE4r_block_1"
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,43 +45,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: "schwarzB\xE4r_walk1.png_0"
+    - name: "B\xE4r_block_0"
       rect:
         serializedVersion: 2
-        x: 47
-        y: 238
-        width: 367
-        height: 552
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "schwarzB\xE4r_walk1.png_1"
-      rect:
-        serializedVersion: 2
-        x: 431
-        y: 238
-        width: 367
+        x: 66
+        y: 236
+        width: 320
         height: 554
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "schwarzB\xE4r_walk1.png_2"
+    - name: "B\xE4r_block_1"
       rect:
         serializedVersion: 2
-        x: 819
+        x: 493
         y: 236
-        width: 367
-        height: 556
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "schwarzB\xE4r_walk1.png_3"
-      rect:
-        serializedVersion: 2
-        x: 1202
-        y: 235
-        width: 347
-        height: 557
+        width: 315
+        height: 554
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	
 	public bool Ducking = false;
 	public bool Blocking = false;
-    public bool inAir = false;
+    public bool inAir;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +27,6 @@ public class Player : MonoBehaviour {
                 		Enemy = player;
             	}
 		}
-		
-	
-		
 	}
 	
 	// Update is called once per frame
@@ -48,6 +45,11 @@ public class Player : MonoBehaviour {
 		if (inAir)
 			animator.SetFloat("ySpeed",rigidbody2D.velocity.y);
 		
+
+        if (rigidbody2D.velocity.y < 0)
+        {
+            Debug.Log("Falling " + Time.time);
+        }
 
 	}
 
@@ -108,7 +110,7 @@ public class Player : MonoBehaviour {
 	
 	public void HeavyPunch()
 	{
-		animator.SetTrigger("highpunch");
+		animator.SetTrigger("highPunch");
 		SetLayer();
 	}
 	
