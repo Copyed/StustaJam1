@@ -159,6 +159,7 @@ public class Player : MonoBehaviour {
 	public void HitbyFist()
 	{
 		SpawnPlush();
+		GameObject.Find ("OtherSoundsSource").GetComponent<FightSounds>().Hit();
 	
 		if(Blocking)
 		{
