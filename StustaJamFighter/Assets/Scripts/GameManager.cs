@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public Player[] players;
     
     bool RoutineRunning = false;
+    bool LoadingMenu = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -36,10 +37,12 @@ public class GameManager : MonoBehaviour {
 		
 		foreach(Player P in players)
 		{
-			if(P.health <=0)
+			if(P.health <=0 && LoadingMenu == false)
 			{
-				Debug.Log ("Player dead");
+				LoadingMenu = true;
+				GameObject.Find ("OtherSoundsSource").GetComponent<FightSounds>().Die();
 				StartCoroutine("BackToMenu",5.0f);
+				
 			}
 		}
 	
