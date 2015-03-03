@@ -14,12 +14,14 @@ public class Player : MonoBehaviour {
 	public bool Ducking = false;
 	public bool Blocking = false;
     public bool inAir;
+
+    bool dead = false;
     
     public Transform[] PlushFetzen;
 
 	// Use this for initialization
 	void Start () {
-
+        dead = false;
 		animator = GetComponent<Animator> ();
         //Findet den Gegner um ihn immer anzuvisieren
 		foreach(Player player in GameManager.instance.players)
@@ -33,7 +35,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (dead)
+            return;
 	
 		if(Enemy != null)
 		{
@@ -73,7 +76,9 @@ public class Player : MonoBehaviour {
     
 	
 	public void MovePlayer(float StickMove)
-	{
+    {
+        if (dead)
+            return;
 		animator.SetFloat ("movSpeed", StickMove);
 		Vector3 old = transform.position;
 		transform.position = new Vector3(old.x + speed * StickMove * Time.deltaTime,old.y,old.z);
@@ -81,7 +86,9 @@ public class Player : MonoBehaviour {
 	}
 	
 	public void Jump()
-	{
+    {
+        if (dead)
+            return;
 		//Player Jump
         if (!inAir)
         {
@@ -93,44 +100,58 @@ public class Player : MonoBehaviour {
 	}
 	
 	public void Duck()
-	{
+    {
+        if (dead)
+            return;
 		Debug.Log ("DUCK "+Time.time);
 		Ducking = true;
 		animator.SetBool ("duck",Ducking);
 	}
 	
 	public void Punch()
-	{
+    {
+        if (dead)
+            return;
 		animator.SetTrigger ("punch");
 		SetLayer();
 	}
 	
 	public void HeavyPunch()
-	{
+    {
+        if (dead)
+            return;
 		animator.SetTrigger("highPunch");
 		SetLayer();
 	}
 	
 	public void HighPunch()
-	{
+    {
+        if (dead)
+            return;
 		animator.SetTrigger ("highPunch");
 		SetLayer();
 	}
 	
 	public void Kick()
-	{
+    {
+        if (dead)
+            return;
 		Debug.Log ("KICK");
 		SetLayer();
 	}
 	
 	public void HeavyKick()
-	{
+    {
+        if (dead)
+            return;
 		Debug.Log ("HEAVY KICK");
 		SetLayer();
 	}
 	
 	public void Block()
-	{
+    {
+        if (dead)
+            return;
 		animator.SetBool ("block", true);
 		//Debug.Log ("BLOCK");
 	}
@@ -145,7 +166,10 @@ public class Player : MonoBehaviour {
 	}
 	
 	public void Die()
-	{
+    {
+        if (dead)
+            return;
+        dead = true;
 		animator.SetTrigger ("die");
 		//does not work    	this.enabled = false;
 		//GetComponent<BoxCollider2D> ().enabled = false;
@@ -157,7 +181,9 @@ public class Player : MonoBehaviour {
 	}
 	
 	public void HitbyFist()
-	{
+    {
+        if (dead)
+            return;
 		Debug.Log ("HIT");
 		SpawnPlush();
 		GameObject.Find ("OtherSoundsSource").GetComponent<FightSounds>().Hit();
@@ -173,7 +199,9 @@ public class Player : MonoBehaviour {
 	}
 	
 	public void HitbyFeet()
-	{
+    {
+        if (dead)
+            return;
 		if(Blocking)
 		{
 			health -= 4.0f;
@@ -186,7 +214,9 @@ public class Player : MonoBehaviour {
 	
 	//Erhält die MoveDirection und prüft ob wir uns vom Gegner wegbewegen um zu blocken
 	public void CheckForBlock(float MoveDir)
-	{
+    {
+        if (dead)
+            return;
 		if(Enemy != null)
 		{
 			//Gegner ist rechts von mir
