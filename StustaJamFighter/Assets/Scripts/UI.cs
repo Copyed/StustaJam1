@@ -6,6 +6,8 @@ public class UI : MonoBehaviour {
     public RectTransform healthBarLeft;
     public RectTransform healthBarRight;
 
+    public float factor = 1.85f;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -16,11 +18,11 @@ public class UI : MonoBehaviour {
 	
 		if(healthBarLeft != null)
 		{
-        	healthBarLeft.sizeDelta = new Vector2(GameManager.instance.players[1].health, 100.0f);
+            healthBarLeft.pivot = new Vector2((GameManager.instance.players[1].health * (factor / -100.0f)) + factor, 0.5f);
         }
         if(healthBarRight != null)
         {
-            healthBarRight.sizeDelta = new Vector2(GameManager.instance.players[0].health, 100.0f);
+            healthBarRight.pivot = new Vector2((GameManager.instance.players[0].health * (factor / -100.0f)) + factor, 0.5f);
 		}
 	}
 }
