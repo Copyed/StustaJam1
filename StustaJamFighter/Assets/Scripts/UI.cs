@@ -17,12 +17,14 @@ public class UI : MonoBehaviour {
 		//Debug.Log (GameManager.instance.players[1].health+" "+GameManager.instance.players[0].health);
 	
 		if(healthBarLeft != null)
-		{
-            healthBarLeft.pivot = new Vector2((GameManager.instance.players[1].health * (factor / -100.0f)) + factor, 0.5f);
+        {
+            healthBarLeft.anchorMax = new Vector2(GameManager.instance.players[1].health / 100f * 0.68f, healthBarLeft.anchorMax.y);
+            //healthBarLeft.pivot = new Vector2((GameManager.instance.players[1].health * (factor / -100.0f)) + factor, 0.5f);
         }
         if(healthBarRight != null)
         {
-            healthBarRight.pivot = new Vector2((GameManager.instance.players[0].health * (factor / -100.0f)) + factor, 0.5f);
+            healthBarRight.anchorMax = new Vector2(GameManager.instance.players[0].health / 100f * 0.68f, healthBarRight.anchorMax.y);
+            //healthBarRight.pivot = new Vector2((GameManager.instance.players[0].health * (factor / -100.0f)) + factor, 0.5f);
 		}
 	}
 }
