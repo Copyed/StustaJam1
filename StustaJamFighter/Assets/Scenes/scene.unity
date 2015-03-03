@@ -373,7 +373,9 @@ MonoBehaviour:
   Ducking: 0
   Blocking: 0
   inAir: 1
-  PlushFetzen: []
+  PlushFetzen:
+  - {fileID: 469214, guid: 1ce259adc68707b40bae783e4edd3787, type: 2}
+  - {fileID: 491008, guid: b5b019107f9d97840bbbb2b981b57073, type: 2}
 --- !u!4 &180204581
 Transform:
   m_ObjectHideFlags: 0
@@ -711,7 +713,7 @@ GameObject:
   m_Layer: 0
   m_Name: leftBorder
   m_TagString: Border
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -746,6 +748,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11497560, guid: aeb206eb3e0e24748b8e8329eac1a55f, type: 2}
+      propertyPath: PlushFetzen.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 497560, guid: aeb206eb3e0e24748b8e8329eac1a55f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 14.71
@@ -778,6 +784,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11497560, guid: aeb206eb3e0e24748b8e8329eac1a55f, type: 2}
+      propertyPath: PlushFetzen.Array.data[0]
+      value: 
+      objectReference: {fileID: 469214, guid: 1ce259adc68707b40bae783e4edd3787, type: 2}
+    - target: {fileID: 11497560, guid: aeb206eb3e0e24748b8e8329eac1a55f, type: 2}
+      propertyPath: PlushFetzen.Array.data[1]
+      value: 
+      objectReference: {fileID: 491008, guid: b5b019107f9d97840bbbb2b981b57073, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aeb206eb3e0e24748b8e8329eac1a55f, type: 2}
   m_RootGameObject: {fileID: 180204574}
@@ -1012,7 +1026,7 @@ GameObject:
   m_Layer: 0
   m_Name: rightBorder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1077,7 +1091,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471240, guid: 720e3c5cda7dfad4fa26ab557588e72e, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720e3c5cda7dfad4fa26ab557588e72e, type: 2}
@@ -1481,7 +1495,9 @@ MonoBehaviour:
   Ducking: 0
   Blocking: 0
   inAir: 1
-  PlushFetzen: []
+  PlushFetzen:
+  - {fileID: 469214, guid: 1ce259adc68707b40bae783e4edd3787, type: 2}
+  - {fileID: 491008, guid: b5b019107f9d97840bbbb2b981b57073, type: 2}
 --- !u!4 &1062611516
 Transform:
   m_ObjectHideFlags: 0
@@ -1546,6 +1562,69 @@ Transform:
   - {fileID: 1441211763}
   m_Father: {fileID: 358545695}
   m_RootOrder: 0
+--- !u!1 &1095539039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1095539041}
+  - 108: {fileID: 1095539040}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1095539040
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095539039}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1095539041
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095539039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &1136695154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1696,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: PlushFetzen.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1649,6 +1732,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: PlushFetzen.Array.data[0]
+      value: 
+      objectReference: {fileID: 469214, guid: 1ce259adc68707b40bae783e4edd3787, type: 2}
+    - target: {fileID: 11421360, guid: 710fb96625452b548b9dd580832ac593, type: 2}
+      propertyPath: PlushFetzen.Array.data[1]
+      value: 
+      objectReference: {fileID: 491008, guid: b5b019107f9d97840bbbb2b981b57073, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710fb96625452b548b9dd580832ac593, type: 2}
   m_RootGameObject: {fileID: 1062611510}
@@ -2354,8 +2445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c3cb0f5f02af248933bcf7548ba0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarLeft: {fileID: 1065174368}
-  healthBarRight: {fileID: 1765683242}
+  healthBarLeft: {fileID: 0}
+  healthBarRight: {fileID: 0}
 --- !u!1 &1753702634
 GameObject:
   m_ObjectHideFlags: 0
