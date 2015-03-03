@@ -52,13 +52,15 @@ public class Hauptmenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		Debug.Log (VorhangOffen);
+		//Debug.Log (VorhangOffen);
 	
         if(Input.GetKeyDown("u"))
         {
             	if(VorhangOffen == false)
 	            {
 		            VorhangOffen = true;
+					Publikum PublikumScript = GameObject.Find ("PublikumSound").GetComponent<Publikum>();
+					PublikumScript.ChangeToLoud();
 		            animator.SetBool("VorhangOffen",true);
                 }
                 else
@@ -115,6 +117,8 @@ public class Hauptmenu : MonoBehaviour {
 				if(VorhangOffen == false)
 				{
 					VorhangOffen = true;
+					Publikum PublikumScript = GameObject.Find ("PublikumSound").GetComponent<Publikum>();
+					PublikumScript.ChangeToLoud();
 					animator.SetBool("VorhangOffen",true);
 				}
 				else

@@ -20,7 +20,7 @@ public class Faust : MonoBehaviour {
 	{
 		if(other.gameObject != MyPlayer.gameObject)
 		{
-			Debug.Log(other.name);
+			//Debug.Log(other.name);
 			MyPlayer.Enemy.HitbyFist();
 		}
 	}

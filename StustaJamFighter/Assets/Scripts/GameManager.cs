@@ -27,11 +27,21 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
 		//camera = Camera.main;
-		DontDestroyOnLoad (gameObject);
+		//DontDestroyOnLoad (gameObject);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
+		
+		foreach(Player P in players)
+		{
+			if(P.health <=0)
+			{
+				Debug.Log ("Player dead");
+				StartCoroutine("BackToMenu",5.0f);
+			}
+		}
 	
 		for( int i = 0; i < players.Length; i++ )
 		{
@@ -41,6 +51,8 @@ public class GameManager : MonoBehaviour {
 				
 			}
 		}
+		
+	
 	
 	}
 	
@@ -65,5 +77,11 @@ public class GameManager : MonoBehaviour {
 			players[0].Enemy = players[Index];
 		}
 		RoutineRunning = false;
+	}
+	
+	IEnumerator BackToMenu(float WaitTime)
+	{
+		yield return new WaitForSeconds(WaitTime);
+		Application.LoadLevel(0);
 	}
 }
