@@ -52,8 +52,6 @@ public class cameraMovement : MonoBehaviour {
 
 		float leftPlayerx = Mathf.Min (players [0].transform.position.x, players [1].transform.position.x);
 		float rightPlayerx = Mathf.Max (players [0].transform.position.x, players [1].transform.position.x);
-		float sizeBorder1 = Mathf.Max (leftPlayerx, lB);
-		float sizeBorder2 = Mathf.Min (rightPlayerx, rB);
 
 		float newSize = Mathf.Abs (leftPlayerx - rightPlayerx)/inverseCameraSize;
 		changeSize(Mathf.Max(minSize,newSize));

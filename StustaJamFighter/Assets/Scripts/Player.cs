@@ -226,7 +226,7 @@ public class Player : MonoBehaviour {
 		Vector3 SpawnPos = new Vector3(transform.position.x,transform.position.y+1.0f,transform.position.z);
 		//Quaternion Rot = new Quaternion(-90,0,0,1);
 		Transform Pref = Instantiate (PlushFetzen[Random.Range(0,PlushFetzen.Length)],SpawnPos,Quaternion.identity) as Transform;
-		Pref.RotateAround(new Vector3(1,0,0),-90.0f);
+		Pref.Rotate(new Vector3(1,0,0),-90.0f);
 		Pref.rigidbody.AddForce(Random.Range (-80.0f,80.0f),Random.Range(0.0f,50.0f),0);
 		
 	}
