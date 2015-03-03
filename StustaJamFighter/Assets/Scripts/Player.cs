@@ -14,6 +14,8 @@ public class Player : MonoBehaviour {
 	public bool Ducking = false;
 	public bool Blocking = false;
     public bool inAir;
+    
+    public Transform[] PlushFetzen;
 
 	// Use this for initialization
 	void Start () {
@@ -87,7 +89,7 @@ public class Player : MonoBehaviour {
             inAir = true;
         }
 		//animator.SetFloat("ySpeed",rigidbody2D.velocity.y);
-		Debug.Log (rigidbody2D.velocity.y);
+		//Debug.Log (rigidbody2D.velocity.y);
 	}
 	
 	public void Duck()
@@ -156,6 +158,7 @@ public class Player : MonoBehaviour {
 	
 	public void HitbyFist()
 	{
+		SpawnPlush();
 	
 		if(Blocking)
 		{
@@ -215,5 +218,16 @@ public class Player : MonoBehaviour {
 		{
 			this.renderer.sortingOrder = Enemy.renderer.sortingOrder + 1;
 		}
+	}
+	
+	public void SpawnPlush()
+	{
+		//Debug.Log ("I : "+this.transform.name+" spawned plush");
+		Vector3 SpawnPos = new Vector3(transform.position.x,transform.position.y+1.0f,transform.position.z);
+		//Quaternion Rot = new Quaternion(-90,0,0,1);
+		Transform Pref = Instantiate (PlushFetzen[Random.Range(0,PlushFetzen.Length)],SpawnPos,Quaternion.identity) as Transform;
+		Pref.RotateAround(new Vector3(1,0,0),-90.0f);
+		Pref.rigidbody.AddForce(Random.Range (-80.0f,80.0f),Random.Range(0.0f,50.0f),0);
+		
 	}
 }
